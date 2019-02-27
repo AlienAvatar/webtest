@@ -9,6 +9,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const goRouter = require('./routes/go');
 const mainRouter = require('./routes/main')
+const signinRouter = require('./routes/siginin')
 
 
 // view engine setup
@@ -16,11 +17,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 //路由
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/go',goRouter);
 app.use('/main',mainRouter);
-
+app.use('signin',signinRouter);
 
 app.listen(8080);
 
